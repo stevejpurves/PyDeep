@@ -37,7 +37,7 @@ from pydeep.base.costfunction import *
 import numpy as numx
 import sys
 
-print "\n... pydeep.base.costfunction.py"
+print("\n... pydeep.base.costfunction.py")
 
 epsilon = 0.0001
 

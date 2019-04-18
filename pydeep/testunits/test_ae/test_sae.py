@@ -39,7 +39,7 @@ import pydeep.ae.model as MODEL
 import pydeep.base.activationfunction as AFct
 import pydeep.base.costfunction as CFct
 
-print "\n... pydeep.ae.sae.py"
+print("\n... pydeep.ae.sae.py")
 
 
 class Test_SAE_Model(unittest.TestCase):

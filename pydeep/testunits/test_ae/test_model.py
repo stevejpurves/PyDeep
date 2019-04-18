@@ -40,7 +40,7 @@ import pydeep.ae.model as TRAINER
 import pydeep.base.activationfunction as AFct
 import pydeep.base.costfunction as CFct
 
-print "\n... pydeep.ae.model.py"
+print("\n... pydeep.ae.model.py")
 
 class Test_AE_Model(unittest.TestCase):
 
@@ -109,8 +109,8 @@ class Test_AE_Model(unittest.TestCase):
                         maxb =  numx.max(numx.abs(b))
                         maxc =  numx.max(numx.abs(c))
                         if  maxW > 0.0001 or maxb > 0.0001 or maxc > 0.0001  :
-                            print "Gradient check failed for ae with: ",
-                            print " CENTERING ",loss," ",act_in," ",act_out
+                            print("Gradient check failed for ae with: ",)
+                            print(" CENTERING ",loss," ",act_in," ",act_out)
                         assert numx.all(maxW < 0.0001)
                         assert numx.all(maxb < 0.0001)
                         assert numx.all(maxc < 0.0001)
@@ -133,9 +133,9 @@ class Test_AE_Model(unittest.TestCase):
                         maxb =  numx.max(numx.abs(b))
                         maxc =  numx.max(numx.abs(c))
                         if  maxW > 0.0001 or maxb > 0.0001 or maxc > 0.0001  :
-                            print "Gradient check failed for ae with: ",
-                            print " CENTERING ",loss," ",act_in," ",act_out
-                            print maxW,'\t',maxb,'\t',maxc
+                            print("Gradient check failed for ae with: ",)
+                            print(" CENTERING ",loss," ",act_in," ",act_out)
+                            print(maxW,'\t',maxb,'\t',maxc)
                         assert numx.all(maxW < 0.0001)
                         assert numx.all(maxb < 0.0001)
                         assert numx.all(maxc < 0.0001)

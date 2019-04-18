@@ -94,18 +94,18 @@ ae = aeModel.AutoEncoder(v1*v2,
 trainer = aeTrainer.GDTrainer(ae)
 
 # Train model
-print 'Training'
-print 'Epoch\tRE train\t\tRE test\t\t\tSparsness train\t\tSparsness test '
+print('Training')
+print('Epoch\tRE train\t\tRE test\t\t\tSparsness train\t\tSparsness test ')
 for epoch in range(0,max_epochs+1,1) :
 
     # Shuffle data
     train_data = numx.random.permutation(train_data)
 
     # Print reconstruction errors and sparseness for Training and test data
-    print epoch, ' \t\t', numx.mean(ae.reconstruction_error(train_data)), \
+    print(epoch, ' \t\t', numx.mean(ae.reconstruction_error(train_data)), \
         ' \t', numx.mean(ae.reconstruction_error(test_data)),\
         ' \t', numx.mean(ae.encode(train_data)), \
-        ' \t', numx.mean(ae.encode(test_data))
+        ' \t', numx.mean(ae.encode(test_data)))
     for b in range(0,train_data.shape[0],batch_size):
 
         trainer.train(data = train_data[b:(b+batch_size),:],

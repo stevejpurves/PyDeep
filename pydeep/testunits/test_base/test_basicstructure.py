@@ -42,7 +42,7 @@ import numpy as numx
 from pydeep.base.activationfunction import Sigmoid
 from pydeep.base.basicstructure import BipartiteGraph, StackOfBipartiteGraphs
 
-print "\n... pydeep.base.basicstructure.py"
+print("\n... pydeep.base.basicstructure.py")
 
 
 def compare_BipartiteGraph_after_removing(

@@ -40,7 +40,7 @@ from pydeep.misc.toyproblems import generate_bars_and_stripes_complete
 import pydeep.rbm.model as Model
 import pydeep.rbm.estimator as Estimator
 
-print "\n... pydeep.rbm.estimator.py"
+print("\n... pydeep.rbm.estimator.py")
 
 
 class TestEstimator(unittest.TestCase):

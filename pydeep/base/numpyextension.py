@@ -264,10 +264,10 @@ def get_2d_gauss_kernel(width, height, shift=0, var=[1.0, 1.0]):
             covar = var
 
     if width % 2 == 0:
-        print "N needs to be odd!"
+        print("N needs to be odd!")
         pass
     if height % 2 == 0:
-        print "M needs to be odd!"
+        print("M needs to be odd!")
         pass
     lowern = (width - 1) / 2
     lowerm = (height - 1) / 2

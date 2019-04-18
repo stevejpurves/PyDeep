@@ -60,17 +60,17 @@ def print_progress(step,
     :type decimal_place: int
     """
     # jump to line beginning
-    print '\r',
+    print('\r',)
     if gauge:
         # print gauge
-        print '=' * (step * length / num_steps) + '>' + '.' * (length - step * length / num_steps),
+        print('=' * (step * length / num_steps) + '>' + '.' * (length - step * length / num_steps),)
     # Define where to start printing the difits
     percent_format = '%'+str(3+decimal_place+numx.sign(decimal_place))+'.'+str(decimal_place)+'f%%'
     # Print formated percentage
     percent = (step * 100.0 / num_steps)
-    print percent_format % percent
+    print(percent_format % percent)
     if step == num_steps:
-        print ""
+        print("")
 
 
 class Stopwatch(object):

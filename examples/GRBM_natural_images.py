@@ -101,8 +101,8 @@ trainer_cd = trainer.CD(rbm)
 
 # Train model, status every 10th epoch
 step = 10
-print 'Training'
-print 'Epoch\tRE train\tRE test \tLL train\tLL test '
+print('Training')
+print('Epoch\tRE train\tRE test \tLL train\tLL test ')
 for epoch in range(0, max_epochs + 1, 1):
 
     # Shuffle training samples (optional)
@@ -112,7 +112,7 @@ for epoch in range(0, max_epochs + 1, 1):
     if epoch % step == 0:
         RE_train = numx.mean(estimator.reconstruction_error(rbm, train_data))
         RE_test = numx.mean(estimator.reconstruction_error(rbm, test_data))
-        print '%5d \t%0.5f \t%0.5f' % (epoch, RE_train, RE_test)
+        print('%5d \t%0.5f \t%0.5f' % (epoch, RE_train, RE_test))
 
     # Train one epoch with gradient restriction/clamping
     # No weight decay, momentum or sparseness is used
@@ -137,19 +137,19 @@ for epoch in range(0, max_epochs + 1, 1):
 # Calculate reconstruction error
 RE_train = numx.mean(estimator.reconstruction_error(rbm, train_data))
 RE_test = numx.mean(estimator.reconstruction_error(rbm, test_data))
-print '%5d \t%0.5f \t%0.5f' % (max_epochs, RE_train, RE_test)
+print('%5d \t%0.5f \t%0.5f' % (max_epochs, RE_train, RE_test))
 
 # Approximate partition function by AIS (tends to overestimate)
 logZ = estimator.annealed_importance_sampling(rbm)[0]
 LL_train = numx.mean(estimator.log_likelihood_v(rbm, logZ, train_data))
 LL_test = numx.mean(estimator.log_likelihood_v(rbm, logZ, test_data))
-print 'AIS: \t%0.5f \t%0.5f' % (LL_train, LL_test)
+print('AIS: \t%0.5f \t%0.5f' % (LL_train, LL_test))
 
 # Approximate partition function by reverse AIS (tends to underestimate)
 logZ = estimator.reverse_annealed_importance_sampling(rbm)[0]
 LL_train = numx.mean(estimator.log_likelihood_v(rbm, logZ, train_data))
 LL_test = numx.mean(estimator.log_likelihood_v(rbm, logZ, test_data))
-print 'reverse AIS \t%0.5f \t%0.5f' % (LL_train, LL_test)
+print('reverse AIS \t%0.5f \t%0.5f' % (LL_train, LL_test))
 
 # Reorder RBM features by average activity decreasingly
 rbmReordered = vis.reorder_filter_by_hidden_activation(rbm, train_data)

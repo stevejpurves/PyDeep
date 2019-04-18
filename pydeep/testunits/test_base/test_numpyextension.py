@@ -36,7 +36,7 @@ import unittest
 import sys
 from pydeep.base.numpyextension import *
 
-print "\n... pydeep.base.numpyextension.py"
+print("\n... pydeep.base.numpyextension.py")
 
 epsilon = 0.00001
 
